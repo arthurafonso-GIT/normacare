@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout principal do Assistente de Voz.
+    Design: alto contraste (fundo preto + amarelo + branco).
+    Todos os elementos têm tamanho grande para baixa visão.
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <!-- ══════════════════════════════════════
+             TÍTULO
+        ══════════════════════════════════════ -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📱 ASSISTENTE"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/amarelo"
+            android:layout_marginTop="24dp"
+            android:letterSpacing="0.1"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toque no botão e fale"
+            android:textSize="20sp"
+            android:textColor="@color/branco_dim"
+            android:layout_marginTop="4dp"
+            android:gravity="center" />
+
+        <!-- ══════════════════════════════════════
+             PAINEL DE STATUS
+             Mostra o que está acontecendo
+        ══════════════════════════════════════ -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:text="Toque em FALAR e diga o que precisa"
+            android:textSize="24sp"
+            android:textColor="@color/branco"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="20dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_status"
+            android:contentDescription="Status do assistente" />
+
+        <!-- ══════════════════════════════════════
+             BOTÃO PRINCIPAL — FALAR
+        ══════════════════════════════════════ -->
+        <Button
+            android:id="@+id/btnFalar"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="32dp"
+            android:text="🎤\nFALAR"
+            android:contentDescription="Toque para falar"
+            style="@style/BotaoPrincipal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toque no botão amarelo"
+            android:textSize="18sp"
+            android:textColor="@color/branco_dim"
+            android:layout_marginTop="12dp"
+            android:gravity="center" />
+
+        <!-- ══════════════════════════════════════
+             BOTÕES SECUNDÁRIOS (atalhos rápidos)
+        ══════════════════════════════════════ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="32dp">
+
+            <!-- WhatsApp -->
+            <Button
+                android:id="@+id/btnWhatsApp"
+                android:layout_marginBottom="16dp"
+                android:text="💬  WhatsApp"
+                android:backgroundTint="@color/superficie"
+                android:contentDescription="Abrir WhatsApp"
+                style="@style/BotaoSecundario" />
+
+            <!-- Internet -->
+            <Button
+                android:id="@+id/btnInternet"
+                android:layout_marginBottom="16dp"
+                android:text="🌐  Internet"
+                android:backgroundTint="@color/superficie"
+                android:contentDescription="Abrir internet"
+                style="@style/BotaoSecundario" />
+
+            <!-- Ligar -->
+            <Button
+                android:id="@+id/btnLigar"
+                android:text="📞  Ligar"
+                android:backgroundTint="@color/superficie"
+                android:contentDescription="Ligar para alguém"
+                style="@style/BotaoSecundario" />
+
+        </LinearLayout>
+
+        <!-- ══════════════════════════════════════
+             OVERLAY DE CONFIRMAÇÃO (SIM / NÃO)
+             Aparece por cima de tudo quando
+             o app precisa de confirmação.
+        ══════════════════════════════════════ -->
+        <LinearLayout
+            android:id="@+id/layoutConfirmacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_confirmacao"
+            android:padding="24dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:elevation="12dp">
+
+            <TextView
+                android:id="@+id/tvConfirmacaoTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Você quer ligar para João?"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/branco"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                android:lineSpacingMultiplier="1.2" />
+
+            <!-- SIM -->
+            <Button
+                android:id="@+id/btnSim"
+                android:text="✅  SIM"
+                android:backgroundTint="@color/verde"
+                android:contentDescription="Confirmar"
+                style="@style/BotaoSecundario" />
+
+            <!-- NÃO -->
+            <Button
+                android:id="@+id/btnNao"
+                android:text="❌  NÃO"
+                android:backgroundTint="@color/superficie"
+                android:layout_marginTop="14dp"
+                android:strokeColor="@color/vermelho"
+                android:contentDescription="Cancelar"
+                style="@style/BotaoSecundario" />
+
+        </LinearLayout>
+
+        <!-- Espaço inferior -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="32dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Paleta de alto contraste para usuários com baixa visão.
+    Fundo escuro + texto branco + destaque amarelo brilhante.
+-->
+<resources>
+    <color name="fundo">#121212</color>
+    <color name="superficie">#1E1E1E</color>
+    <color name="amarelo">#FFD600</color>
+    <color name="amarelo_dim">#FFAB00</color>
+    <color name="branco">#F5F5F5</color>
+    <color name="branco_dim">#B0B0B0</color>
+    <color name="preto">#000000</color>
+    <color name="verde">#00E676</color>
+    <color name="vermelho">#FF5252</color>
+    <color name="borda_amarela">#FFD600</color>
+    <color name="card_bg">#252525</color>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Tema global da aplicação -->
+    <style name="Theme.AssistenteVoz" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/amarelo</item>
+        <item name="colorPrimaryVariant">@color/amarelo_dim</item>
+        <item name="colorOnPrimary">@color/preto</item>
+        <item name="colorSurface">@color/superficie</item>
+        <item name="android:windowBackground">@color/fundo</item>
+        <item name="android:statusBarColor">@color/fundo</item>
+        <item name="android:navigationBarColor">@color/fundo</item>
+        <item name="android:textColor">@color/branco</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- Botão principal (circular/grande) -->
+    <style name="BotaoPrincipal" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">240dp</item>
+        <item name="android:layout_height">240dp</item>
+        <item name="cornerRadius">120dp</item>
+        <item name="android:elevation">12dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:backgroundTint">@color/amarelo</item>
+        <item name="android:textColor">@color/preto</item>
+        <item name="android:textSize">34sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Botões secundários (retangulares com borda) -->
+    <style name="BotaoSecundario" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">90dp</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="strokeColor">@color/amarelo</item>
+        <item name="strokeWidth">3dp</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textColor">@color/branco</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+</resources>

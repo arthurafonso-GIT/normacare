@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.assistente.voz">
+
+    <!-- ══════════════════════════════════════
+         PERMISSÕES
+    ══════════════════════════════════════ -->
+
+    <!-- Microfone para reconhecimento de voz -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Leitura dos contatos do dispositivo -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- Realizar ligações diretamente (sem abrir discador) -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!-- Vibração para feedback visual/tátil -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Internet (para abrir browser) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Necessário para abrir outros apps no Android 11+ -->
+    <queries>
+        <package android:name="com.whatsapp" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+    <!-- ══════════════════════════════════════
+         FEATURES REQUERIDAS
+    ══════════════════════════════════════ -->
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AssistenteVoz"
+        android:largeHeap="false"
+        android:hardwareAccelerated="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:launchMode="singleTop">
+
+            <!-- Intent de lançamento (ícone na gaveta de apps) -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>
